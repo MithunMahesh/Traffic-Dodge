@@ -1,0 +1,158 @@
+Section          Base   Top    High   Length
+---------------- ------ ------ ------ -------
+.icon            D1A882 D1A882             0h
+.init.libs       D1A882 D1A8DA            58h
+.libs            D1A8DA D1A92B            51h
+.init.clock      D1A92B D1A92B             0h
+.init.reruncheck D1A92B D1A92B             0h
+.init            D1A92B D1A955            2Ah
+.fini            D1A955 D1A989            34h
+.text            D1A989 D1D0C0          2737h
+.data            D1D0C0 D1F854          2794h
+.rodata          D1F854 D1F99E           14Ah
+.init_array      000000 000000             0h
+.ctors           000000 000000             0h
+.dtors           000000 000000             0h
+.fini_array      000000 000000             0h
+.bss             D052C6 D0532F D13FD8     69h
+.header          D1A87F D1A882             3h
+
+Label                       Value
+-------------------------   ------
+___low_bss                = D052C6
+___len_bss                = 000069
+___heaptop                = D13FD8
+___heapbot                = D0532F
+___libs                   = D1A8DA
+___init_array_count       = 000000
+___ctors_count            = 000000
+___dtors_count            = 000000
+___fini_array_count       = 000000
+__stack                   = D1A87E
+__land                    = D1A989
+__iand                    = D1A98D
+__frameset                = D1A9A4
+__frameset0               = D1A9B2
+__idivs                   = D1A9BD
+__idvrms                  = D1A9C4
+__idvrmu                  = D1A9F2
+__imulu                   = D1AA0A
+__indcallhl               = D1AA3A
+__ineg                    = D1AA3B
+__irems                   = D1AA44
+__ishl                    = D1AA4C
+__ishru                   = D1AA72
+__ladd                    = D1AAB3
+__lcmpu                   = D1AAB9
+__lcmpzero                = D1AAC1
+__lladd                   = D1AACC
+__lland                   = D1AAF0
+__llcmpu                  = D1AB2D
+__llcmpzero               = D1AB57
+__llctlz                  = D1AB6C
+__lldivs                  = D1AB84
+__lldivu                  = D1ABD4
+__lldvrmu                 = D1ABE8
+__lldvrmu.hijack          = D1ABEF
+__llmulu                  = D1AC46
+__llneg                   = D1AC9B
+__llshl                   = D1ACB4
+__llshrs.hijack_llshru    = D1ACE2
+__llshrs.finish           = D1AD01
+__llshru                  = D1AD05
+__llsub                   = D1AD1F
+__lmulu                   = D1AD41
+__lshrs.hijack_lshru      = D1ADA9
+__lshru                   = D1ADB8
+__lsub                    = D1ADC8
+__ior                     = D1ADD2
+__fcmp                    = 000274
+__ftol                    = 00027C
+__ftoul                   = 00027C
+__ltof                    = 000284
+__setflag                 = 000218
+__ultof                   = 000280
+__ixor                    = D1ADE9
+_os_DisableHomeTextBuffer = D1AE00
+_os_EnableHomeTextBuffer  = D1AE12
+_random                   = D1AE24
+__setstate                = D1AE82
+__state                   = D1D0C0
+_boot_GetDate             = 0005A8
+_boot_GetTime             = 0005B0
+_os_GetCSC                = 021D3C
+_mktime                   = D1AE92
+_mktime.yday              = D1F854
+_npf_vpprintf             = D1AF96
+JTI0_0                    = D1F878
+JTI0_1                    = D1F896
+JTI0_2                    = D1F8DB
+JTI0_3                    = D1F8FC
+JTI0_4                    = D1F914
+JTI0_5                    = D1F92C
+_npf_utoa_rev             = D1C700
+__printf_c                = D1C7C8
+__vsnprintf_c             = D1C7E7
+_npf_bufputc              = D1C86D
+_npf_bufputc_nop          = D1C892
+__snprintf_c              = D1C899
+__vsprintf_c              = D1C8C1
+__vprintf_c               = D1C8E0
+_npf_putc_std             = D1C900
+__sprintf_c               = D1C910
+_.str                     = D1F944
+_.str.1                   = D1F948
+_.str.2                   = D1F94C
+_time                     = D1C939
+_outchar                  = D1C9B7
+_sprintf                  = D1C910
+_vprintf                  = D1C8E0
+_vsnprintf                = D1C7E7
+_rand                     = D1C9CD
+_srand                    = D1C9DA
+.missingappvar            = D1F950
+.libloadname              = D1F955
+.libloadnamelen           = 000007
+.webaddress               = D1F95D
+__start                   = D1A92B
+___exithl                 = D1A955
+skip._exit                = D1A955
+skip.__Exit               = D1A955
+skip._abort               = D1A955
+_exit.sp                  = D1A956
+_exit.flash_wait_states   = D1A960
+_main                     = D1C9E2
+_draw                     = D1CD32
+_endScreen                = D1CDEE
+_updateGame               = D1CEA9
+_drawRoad                 = D1D046
+_player_car               = D052C6
+_traffic_cars             = D052D4
+_lane                     = D0530C
+_leftPressed              = D0530F
+_rightPressed             = D05310
+_validLane                = D05311
+_attempts                 = D05312
+_score_increase           = D05315
+_score                    = D05318
+_buffer                   = D0531B
+_.str                     = D1F972
+_.str.1                   = D1F97C
+_.str.2                   = D1F987
+_mypalette                = D1D0D0
+_player_data              = D1D2D0
+_traffic_data             = D1E592
+lib.LibLoad               = D1A8DA
+_#gfx_Begin               = D1A8ED
+_#gfx_End                 = D1A8F1
+_#gfx_SetColor            = D1A8F5
+_#gfx_SetPalette          = D1A8F9
+_#gfx_FillScreen          = D1A8FD
+_#gfx_SwapDraw            = D1A901
+_#gfx_PrintStringXY       = D1A905
+_#gfx_SetTextFGColor      = D1A909
+_#gfx_GetStringWidth      = D1A90D
+_#gfx_FillRectangle       = D1A911
+_#gfx_TransparentSprite   = D1A915
+_#gfx_Wait                = D1A919
+_#kb_Scan                 = D1A927

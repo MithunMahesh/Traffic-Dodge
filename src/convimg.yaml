@@ -1,0 +1,20 @@
+palettes:
+  - name: mypalette
+    images: automatic
+
+converts:
+  - name: car_sprites
+    palette: mypalette
+    transparent-color-index: 0
+    images:
+      - player.png
+      - traffic.png
+      - road.png
+
+outputs:
+  - type: c
+    include-file: gfx.h
+    palettes:
+      - mypalette
+    converts:
+      - car_sprites

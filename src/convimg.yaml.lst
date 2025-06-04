@@ -1,0 +1,9 @@
+mypalette.h
+mypalette.c
+player.h
+player.c
+traffic.h
+traffic.c
+road.h
+road.c
+gfx.h
