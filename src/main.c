@@ -6,24 +6,13 @@
 #include <stdio.h>
 #include <time.h>
 #include "gfx.h"
-
+#include "main.h"
 
 #define LANE_SIZE (GFX_LCD_WIDTH / 5)
 #define CAR_HEIGHT (80)
 #define NUM_TRAFFIC_CARS (4)
 
-struct Car {
-    uint8_t lane; //u8 is only 1 byte, so ideal for smaller values
-    int x;
-    int y;
-    int width;
-    int height;
-    uint8_t speed;
-};
-
 struct Car player_car = {0};
-//struct Car traffic_car = {0};
-//struct Car traffic_car2 = {0};
 struct Car traffic_cars[NUM_TRAFFIC_CARS] = {0};
 int score;
 int score_increase;
@@ -31,13 +20,6 @@ int lastLaneUsed = -1;
 int lane = 0;
 bool validLane;
 int attempts;
-
-void draw();
-void drawRoad();
-void updateGame();
-bool checkCollision(struct Car, struct Car);
-void updateSpeed();
-void endScreen();
 
 bool leftPressed = false;
 bool rightPressed = false;
@@ -85,23 +67,13 @@ int main(void) {
         }
 
         traffic_cars[i].x = LANE_SIZE;
-        //Stagger cars more
+
+        //Stagger cars 
         traffic_cars[i].y = -CAR_HEIGHT - (i * 150) - (rand() % 100); 
         traffic_cars[i].width = LANE_SIZE;
         traffic_cars[i].height = CAR_HEIGHT;
         traffic_cars[i].speed = 15;
     }
-    /*
-    traffic_cars[1].lane = 0;
-    traffic_cars[1].x = 0;
-    traffic_cars[1].y = -(CAR_HEIGHT + 20);
-    traffic_cars[1].width = LANE_SIZE;
-    traffic_cars[1].height = CAR_HEIGHT;
-    traffic_cars[1].speed = 20;
-    */
-
-    //traffic_cars[0] = traffic_car;
-    //traffic_cars[1] = traffic_car2;
 
     int frame_count = 0;
     int threshold = 200;
@@ -174,24 +146,6 @@ void updateGame() {
         traffic_cars[j].y += traffic_cars[j].speed;
     }
 
-    /*
-    //Respawning traffic cars when they move off screen
-    for (int i = 0; i < NUM_TRAFFIC_CARS; i++) {
-        if (traffic_cars[i].y > GFX_LCD_HEIGHT) {
-            traffic_cars[i].y = -CAR_HEIGHT - (i * 150) - (rand() % 100);
-    
-            //Do while prevents car from spawning in same lane
-            do {
-                lane = (rand() % (4 - 0 + 1)) + 0;
-            } while (lane == lastLaneUsed);
-
-            traffic_cars[i].lane = lane;
-            lastLaneUsed = lane;
-            score++;
-            score_increase++;
-        }
-    }*/
-
     //Respawning traffic cars when they move off screen
     for (int i = 0; i < NUM_TRAFFIC_CARS; i++) {
         if (traffic_cars[i].y > GFX_LCD_HEIGHT) {
@@ -230,15 +184,11 @@ void updateGame() {
 
 void draw() {
     drawRoad();
-    //gfx_SetColor(0x07);
-    //gfx_FillRectangle((player_car.lane * player_car.width) + 3, player_car.y, player_car.width - 3, player_car.height);
 
     gfx_TransparentSprite(player, (player_car.lane * player_car.width) + 3, player_car.y);
 
-    //gfx_SetColor(0xE0);
     for (int i = 0; i < NUM_TRAFFIC_CARS; i++) {
         gfx_TransparentSprite(traffic, (traffic_cars[i].lane * traffic_cars[i].width) + 3, traffic_cars[i].y);        
-        //gfx_FillRectangle((traffic_cars[i].lane * traffic_cars[i].width) + 3, traffic_cars[i].y, traffic_cars[i].width - 3, traffic_cars[i].height);
     }
 
     gfx_SetTextFGColor(0);
@@ -253,7 +203,6 @@ void drawRoad() {
     gfx_SetColor(255);
     
     //Draw dashed lines using rectangles (to make lines thicker)
-
     for (int a = 1; a < 5; a++) {
         for (int i = 10; i < GFX_LCD_HEIGHT; i += 30) {
             gfx_FillRectangle(LANE_SIZE * a, i, 3, 15);
