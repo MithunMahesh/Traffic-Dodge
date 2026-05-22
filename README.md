@@ -1,7 +1,3 @@
-Here’s a strong README structure you could use for your [Traffic Dodge GitHub Repo](https://github.com/MithunMahesh/Traffic-Dodge?utm_source=chatgpt.com) based on the code and assets you uploaded.
-
----
-
 # Traffic Dodge
 
 A fast-paced arcade game built for the TI-84 Plus CE calculator using the CE C Toolchain. Dodge incoming traffic and increase your score as the game progressively speeds up.
